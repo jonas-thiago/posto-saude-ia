@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto de Saúde - Agendamento</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="icon" href="/src/images/health_icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/src/images/health_icon.png" alt="Logo do Posto de Saúde">
+                <h1>Posto de Saúde</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/src/html/about.html">Sobre Nós</a></li>
+                    <li><a href="/src/html/services.html">Serviços</a></li>
+                    <li><a href="/src/html/contact.html">Contato</a></li>
+                    <li><a href="" class="active">Agendamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Agendamento de Consultas</h2>
+                <p>Agende sua consulta de forma rápida e prática</p>
+            </div>
+        </section>
+
+        <section class="appointment-info">
+            <div class="container">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📋</div>
+                        <h3>Documentos Necessários</h3>
+                        <ul>
+                            <li>RG ou CNH</li>
+                            <li>CPF</li>
+                            <li>Cartão do SUS</li>
+                            <li>Comprovante de residência</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3>Horários Disponíveis</h3>
+                        <ul>
+                            <li>Segunda a Sexta: 7h às 17h</li>
+                            <li>Sábado: 7h às 12h</li>
+                            <li>Consultas a cada 30 minutos</li>
+                            <li>Chegue 15 min antes</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Outras Formas de Agendar</h3>
+                        <ul>
+                            <li>Telefone: (XX) XXXX-XXXX</li>
+                            <li>Presencialmente na recepção</li>
+                            <li>WhatsApp: (XX) XXXXX-XXXX</li>
+                            <li>Horário: 7h às 17h</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h3>Formulário de Agendamento</h3>
+                    <p>Preencha os dados abaixo para solicitar seu agendamento:</p>
+                    
+                    <form id="appointment-form" class="appointment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-name">Nome Completo *</label>
+                                <input type="text" id="appointment-name" name="appointment-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-cpf">CPF *</label>
+                                <input type="text" id="appointment-cpf" name="appointment-cpf" required placeholder="000.000.000-00">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-email">Email *</label>
+                                <input type="email" id="appointment-email" name="appointment-email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-phone">Telefone *</label>
+                                <input type="tel" id="appointment-phone" name="appointment-phone" required placeholder="(XX) XXXXX-XXXX">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-birth">Data de Nascimento *</label>
+                                <input type="date" id="appointment-birth" name="appointment-birth" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-gender">Sexo *</label>
+                                <select id="appointment-gender" name="appointment-gender" required>
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointment-address">Endereço Completo *</label>
+                            <textarea id="appointment-address" name="appointment-address" rows="2" required placeholder="Rua, número, bairro, cidade, CEP"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-service">Serviço Desejado *</label>
+                                <select id="appointment-service" name="appointment-service" required>
+                                    <option value="">Selecione um serviço</option>
+                                    <option value="consulta-geral">Consulta Médica Geral</option>
+                                    <option value="pediatria">Pediatria</option>
+                                    <option value="ginecologia">Ginecologia</option>
+                                    <option value="cardiologia">Cardiologia</option>
+                                    <option value="vacinacao">Vacinação</option>
+                                    <option value="exames">Exames Laboratoriais</option>
+                                    <option value="odontologia">Atendimento Odontológico</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-priority">Prioridade</label>
+                                <select id="appointment-priority" name="appointment-priority">
+                                    <option value="normal">Normal</option>
+                                    <option value="urgente">Urgente</option>
+                                    <option value="idoso">Idoso (60+)</option>
+                                    <option value="gestante">Gestante</option>
+                                    <option value="deficiente">Pessoa com Deficiência</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-date">Data Preferencial *</label>
+                                <input type="date" id="appointment-date" name="appointment-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-time">Horário Preferencial *</label>
+                                <select id="appointment-time" name="appointment-time" required>
+                                    <option value="">Selecione um horário</option>
+                                    <option value="07:00">07:00</option>
+                                    <option value="07:30">07:30</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="08:30">08:30</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointment-symptoms">Sintomas ou Motivo da Consulta</label>
+                            <textarea id="appointment-symptoms" name="appointment-symptoms" rows="3" placeholder="Descreva brevemente os sintomas ou o motivo da consulta (opcional)"></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="appointment-terms" name="appointment-terms" required>
+                                <span class="checkmark"></span>
+                                Concordo com os <a href="#" target="_blank">termos de uso</a> e <a href="#" target="_blank">política de privacidade</a> *
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="appointment-notifications" name="appointment-notifications">
+                                <span class="checkmark"></span>
+                                Desejo receber lembretes por email e SMS sobre minha consulta
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-button">Solicitar Agendamento</button>
+                    </form>
+
+                    <div class="form-note">
+                        <p><strong>Importante:</strong> Este é um formulário de solicitação. Você receberá uma confirmação por email ou telefone em até 24 horas com a confirmação do seu agendamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment-tips">
+            <div class="container">
+                <h3>Dicas Importantes</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>📅 Antecedência</h4>
+                        <p>Agende com pelo menos 2 dias de antecedência para garantir disponibilidade.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>⏰ Pontualidade</h4>
+                        <p>Chegue 15 minutos antes do horário marcado para realizar o check-in.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>📋 Documentos</h4>
+                        <p>Traga todos os documentos necessários e exames anteriores, se houver.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>💊 Medicamentos</h4>
+                        <p>Leve a lista de medicamentos que você usa regularmente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Telefone: (XX) XXXX-XXXX</p>
+                    <p>Email: contato@postodesaude.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Endereço</h4>
+                    <p>Rua da Saúde, 123</p>
+                    <p>Bairro Feliz, Cidade - UF</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Sexta: 7h às 17h</p>
+                    <p>Sábado: 7h às 12h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Posto de Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/js/script.js"></script>
+</body>
+</html>
+
